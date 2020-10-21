@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang = "de">
+
+    <head>
+        <!-- meta informations -->
+        <meta charset="utf-8">
+        <meta name="description" content="Dies ist eine Implementierung des Videospiels Pong.">
+
+        <!-- title of the page -->
+        <title>Pong - Highscore-Liste</title>
+
+        <!-- Style related -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+        <style>
+            @font-face { font-family: 'roboto-light';
+                src: url('assets/roboto/Roboto-Medium.ttf') format('truetype');
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <!-- Here follows the content of the highscore-page -->
+    <div id="highscoreMenu" class="center-div-wide">
+            <h1 class="main-header">Highscore-Liste</h1>
+            <div id="highScoreElements">
+                <!-- Within this div, each highscore-entry will be added by manipulating the DOM itself.
+                    Read the following documentation for more informations. -->
+            </div>
+        </div>
+
+        <script>
+            // Get a reference of the highScoreElements-Div
+            var elementList = document.getElementById("highScoreElements");
+
+            // Check if there is any localStorage-object with the title "HIGHSCORES"
+            // If there is a highscore-object ...
+            if(localStorage["HIGHSCORES"] != null){
+
+                // Retrieve the content of the object ...
+                var highScores = JSON.parse(localStorage["HIGHSCORES"]);
+
+                // ... and for each entry within the highscore ...
+                for(var i = 0; i < highScores.length; i++){
+                    // create a reference of this single highscore-entry within the highscore-array
+                    var currentHighScore = highScores[i];
+
+                    // create a new text-node within the page, with the highscore-entry as text-context
+                    var newContent = document.createTextNode(i + ".) " + currentHighScore);
+
+                    // additionally, create a line-break element after each highscore in order to keep
+                    // every entry of the array seperated from each other
+                    var newContentLineBreak = document.createElement("br");
+
+                    // add the new DOM-node and the linebreak-node to the highScoreElements-div
+                    elementList.appendChild(newContentLineBreak);
+                    elementList.appendChild(newContent);
+                }
+            } else {
+                // if there has no highscore been saved yet, show a simple message that there are no highscores
+                var newPlaceHolderContent = document.createTextNode("Keine Highscores vorhanden :(");
+                elementList.appendChild(newPlaceHolderContent);
+            }
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang = "de">
+
+    <head>
+        <!-- meta informations -->
+        <meta charset="utf-8">
+        <meta name="description" content="Dies ist eine Implementierung des Videospiels Pong.">
+
+        <!-- title of the page -->
+        <title>Pong - Hilfestellung</title>
+
+        <!-- Style related -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+        <style>
+            @font-face { font-family: 'roboto-light';
+                src: url('assets/roboto/Roboto-Medium.ttf') format('truetype');
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <!-- Here follows the content of the help-page -->
+        <div id="helpSiteMain" class="center-div-wide">
+            <h1 class="main-header">Hilfestellung</h1>
+            <div id="target">
+                <h2>Spielzweck</h2>
+                Der Spielablauf ist einfach: Der Ball (am Anfang in der Mitte des Spielfeldes) bewegt sich sich in eine zufällig vorgegebene Richtung auf dem Spielfeld.
+                Dieser Ball ändert seine Richtung sobald er mit einer Wand oder mit einem der beiden Spieler kollidiert.
+                <br/><br/>
+                Jeder Spieler steuert dabei einen Schläger, jedoch nur in vertikaler Richtung, sodass nur eine Bewegung nach oben oder unten, jedoch nicht nach links oder rechts möglich ist.
+                <br/><br/>
+                Geht der Ball an einem Spieler vorbei, so erhält der Gegenspieler einen Punkt und die Runde beginnt erneut.
+            </div>
+
+            <div id="win">
+                <h2>Siegesbedingung</h2>
+                Der Spieler, welcher als erste elf (11) Punkte erhält gewinnt das Spiel.
+            </div>
+
+            <div id="lose">
+                <h2>Niederlage</h2>
+                Der Spieler, welcher nicht als erstes elf (11) Punkte erhält verliert das Spiel.
+            </div>
+
+            <div id="commands">
+                <h2>Steuerung</h2>
+                <h3>Spieler 1</h3>
+                    Taste W - Bewege Paddel aufwärts (vertikal)<br/>
+                    Taste S - Bewege Paddel abwärts (vertikal)<br/>
+                <h3>Spieler 2</h3>
+                    Pfeiltaste Aufwärts - Bewege Paddel aufwärts (vertikal)<br/>
+                    Pfeiltaste Abwärts - Bewege Paddel abwärts (vertikal)<br/>
+            </div>
+
+            <div>
+                <!-- The following elements describe the functionality of the ingame-buttons - they look like the buttons in the menu but they dont do anything on THIS PAGE -->
+                <h1>Optionen</h1>
+                Unterhalb des Spiels befinden sich eine Reihe von Schaltflächen, welche folgende Funktionalität besitzen:
+                <br/><br/>
+
+                Aktiviert den Ton oder schaltet diesen Stumm.
+                <button class="optionbutton">Ton an/aus</button>
+                <br/>
+                <br/>
+
+                Aktiviert den Pause-Modus oder reaktiviert das aktuelle Spiel.
+                <button class="optionbutton">Pause an/aus</button>
+                <br/>
+                <br/>
+
+                Versetzt das Paddel des ersten Spielers in den computergesteuerten Modus.
+                <button class="optionbutton">Spieler 1 - Computergesteuert</button>
+                <br/>
+                <br/>
+
+                Versetzt das Paddel des zweiten Spielers in den computergesteuerten Modus.
+                <button class="optionbutton">Spieler 2 - Computergesteuert</button>
+                <br/>
+                <br/>
+
+                Versetzt das Paddel des ersten Spielers in den mausgesteuerten Modus.
+                <button class="optionbutton">Spieler 1 - Kontrolliere mit Maus</button>
+                <br/>
+                <br/>
+
+                Versetzt das Paddel des zweiten Spielers in den mausgesteuerten Modus.
+                <button class="optionbutton">Spieler 2 - Kontrolliere mit Maus</button>
+                <br/>
+                <br/>
+
+                Aktiviert die Darstellung des Richtungs-Vektors vom Ball.
+                <button class="optionbutton">Debug: Zeige Ball-Richtung</button>
+                <br/>
+                <br/>
+
+                Aktiviert die Darstellung von Ball zu den Pedalen.
+                <button class="optionbutton">Debug: Zeige Distanz</button>
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

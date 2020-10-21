@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang = "de">
+
+    <head>
+
+        <!-- meta informations -->
+        <meta charset="utf-8">
+        <meta name="description" content="Dies ist eine Implementierung des Videospiels Pong.">
+
+        <!-- title of the page -->
+        <title>Pong - Spiel</title>
+
+        <!-- Style related -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+        <style>
+            @font-face { font-family: 'roboto-light';
+                src: url('assets/roboto/Roboto-Medium.ttf') format('truetype');
+            }
+        </style>
+
+        <!-- Import of the source-code of the pong game -->
+        <script src="js/Player.js"></script>
+        <script src="js/Ball.js"></script>
+        <script src="js/Utils.js"></script>
+        <script src="js/Pong.js"></script>
+
+    </head>
+
+    <body>
+        <!--
+        In order to get the original feeling of the classic pong game, we need to play beep-boop-brrrr sounds.
+        In order to play theses sounds, we've defining them within the body of the game document.
+
+        The sounds were created by me, using the open-source software called LMMS (Linux MultiMedia Studio).
+         -->
+        <audio id="borderCollision" src="assets/1_BorderCollision.ogg"></audio>
+        <audio id="playerCollision" src="assets/2_PlayerCollision.ogg"></audio>
+        <audio id="ballOut" src="assets/3_BallOut.ogg"></audio>
+
+        <div id="mainPanel">
+
+            <div id="game">
+                <canvas id="canvas" width=640 height=480></canvas>
+                <script>
+                    // we're calling the initialize-method of the game in order to construct basic models, values, etc.
+                    initialize();
+                    // we're calling the update-method then in order to calculate the movement of the player and the
+                    // ball, the visualisation of the game-elements (including the UI), etc. - the Update method calls
+                    // itself so don't have to define a loop here.
+                    update();
+                </script>
+            </div>
+
+            <div class="stack">
+                <!-- The buttons to control the game - a complete guide on what these buttons do can be read within the help-page of this project -->
+                <p>Optionen</p>
+                <button class="optionbutton" id="toggleSound"            onclick="Utils.toggleSound()">Ton an/aus</button><br>
+                <button class="optionbutton" id="togglePause"            onclick="Utils.togglePause()">Pause an/aus</button><br>
+                <button class="optionbutton" id="followP1"               onclick="Utils.toggleFollowP1()">Spieler 1 - Computergesteuert</button><br>
+                <button class="optionbutton" id="followP2"               onclick="Utils.toggleFollowP2()">Spieler 2 - Computergesteuert</button><br>
+                <button class="optionbutton" id="ctrlP1"                 onclick="Utils.toggleControlP1()">Spieler 1 - Kontrolliere mit Maus</button><br>
+                <button class="optionbutton" id="ctrlP2"                 onclick="Utils.toggleControlP2()">Spieler 2 - Kontrolliere mit Maus</button><br>
+                <button class="optionbutton" id="debug_show_direction"   onclick="Utils.toggleDebugShowDirection()">Debug: Zeige Ball-Richtung</button><br>
+                <button class="optionbutton" id="debug_show_distance"    onclick="Utils.toggleDebugShowDistance()">Debug: Zeige Distanz</button><br>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
