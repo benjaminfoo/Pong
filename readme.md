@@ -2,6 +2,7 @@
 ## Projekt: Pong
 
 Dieses Projekt ist im Laufe der Vorlesung "Web-Programmierung" entstanden und dient ausschließlich dem Zweck der Wissensvermittlung :).
+Eine Live-Demo kann unter benjaminfoo.github.io/pong ausprobiert werden.
 
 ## Vorwort
 Diese Markdown-Datei ist Teil des Projekts für die Vorlesung "Web-Programmierung.". 
